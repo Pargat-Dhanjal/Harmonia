@@ -6,7 +6,8 @@ function Discover() {
   const { data, error, isLoading } = useGetTracksQuery();
   const genresTitle = "Pop";
 
-  console.log(data);
+  if (isLoading) return <Loader title="Loading..." />;
+  if (error) return <Error />;
 
   return (
     <div className="flex flex-col">
@@ -27,8 +28,8 @@ function Discover() {
         </select>
       </div>
       <div className="flex flex-wrap sm:justify-start justify-center gap-8">
-        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((song, index) => (
-          <SongCard key={song.key} value={song} i={index}></SongCard>
+        {data?.tracks.map((track, index) => (
+          <SongCard key={index} song={track} index={track.id} />
         ))}
       </div>
     </div>
