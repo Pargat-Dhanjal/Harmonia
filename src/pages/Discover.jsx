@@ -1,13 +1,13 @@
-import { useDispatch, useSelector } from "react-redux";
-import { Error, Loader, SongCard } from "../components";
-import { genres } from "../assets/constants";
-import { useGetTracksQuery } from "../redux/services/shazamCore";
+import { useDispatch, useSelector } from 'react-redux';
+import { Error, Loader, SongCard } from '../components';
+import { genres } from '../assets/constants';
+import { useGetTracksQuery } from '../redux/services/shazamCore';
 
 function Discover() {
   const dispatch = useDispatch();
   const { isPlaying, activeSong } = useSelector((state) => state.player);
   const { data, error, isLoading } = useGetTracksQuery();
-  const genresTitle = "Pop";
+  const genresTitle = 'Pop';
 
   if (isLoading) return <Loader title="Loading..." />;
   if (error) return <Error />;
@@ -35,7 +35,7 @@ function Discover() {
           <SongCard
             key={index}
             song={track}
-            index={track.id}
+            index={track.key}
             isPlaying={isPlaying}
             activeSong={activeSong}
             data={data}

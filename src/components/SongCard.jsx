@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import PlayPause from "./PlayPause";
-import { playPause, setActiveSong } from "../redux/features/playerSlice";
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import PlayPause from './PlayPause';
+import { playPause, setActiveSong } from '../redux/features/playerSlice';
 
 function SongCard({ song, index, isPlaying, activeSong, data }) {
   const dispatch = useDispatch();
@@ -21,8 +21,8 @@ function SongCard({ song, index, isPlaying, activeSong, data }) {
           className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex 
         ${
           activeSong?.title === song.title
-            ? "flex bg-black bg-opacity-70"
-            : "hidden"
+            ? 'flex bg-black bg-opacity-70'
+            : 'hidden'
         }`}
         >
           <PlayPause
@@ -37,14 +37,14 @@ function SongCard({ song, index, isPlaying, activeSong, data }) {
       </div>
       <div className="mt-4 flex flex-col">
         <p className="font-semibold text-lg text-white truncate">
-          <Link to={`/songs/${song?.key}`}>{song.title}</Link>
+          <Link to={`/songs/${index}`}>{song.title}</Link>
         </p>
         <p className="text-sm truncate text-gray-300 mt-1">
           <Link
             to={
               song.artists
                 ? `/artists/${song?.artists[0]?.adamid}`
-                : "/top-artists"
+                : '/top-artists'
             }
           >
             {song.subtitle}

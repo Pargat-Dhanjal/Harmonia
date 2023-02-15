@@ -1,15 +1,14 @@
-import { useEffect, useRef } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { FreeMode } from "swiper";
+import { useEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { FreeMode } from 'swiper';
 
-import PlayPause from "./PlayPause";
-import { playPause, setActiveSong } from "../redux/features/playerSlice";
-import { useGetTracksQuery } from "../redux/services/shazamCore";
-import "swiper/css";
-import "swiper/css/free-mode";
+import PlayPause from './PlayPause';
+import { playPause, setActiveSong } from '../redux/features/playerSlice';
+import { useGetTracksQuery } from '../redux/services/shazamCore';
+import 'swiper/css';
+import 'swiper/css/free-mode';
 
 const TopChartCard = ({
   song,
@@ -53,7 +52,7 @@ function TopPlay() {
   const divRef = useRef(null);
 
   useEffect(() => {
-    divRef.current.scrollIntoView({ behaviour: "smooth" });
+    divRef.current.scrollIntoView({ behaviour: 'smooth' });
   });
 
   const topPlays = data?.tracks?.slice(0, 5);
@@ -112,7 +111,7 @@ function TopPlay() {
         {topPlays?.map((song, index) => (
           <SwiperSlide
             key={song.key}
-            style={{ width: "25%", height: "auto" }}
+            style={{ width: '25%', height: 'auto' }}
             className="shadow-lg rounded-full animate-slideright "
           >
             <Link to={`/artists/${song?.artists[0].adamid}`}>
