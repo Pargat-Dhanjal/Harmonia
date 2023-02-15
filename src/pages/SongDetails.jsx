@@ -19,12 +19,12 @@ function SongDetails() {
   } = useGetSongRelatedQuery({ songid });
   const { data, isFetching } = useGetSongDetailsQuery({ songid });
 
-  const handelPauseClick = () => {
+  const handlePauseClick = () => {
     dispatch(playPause(false));
   };
 
-  const handelPlayClick = (song, index) => {
-    dispatch(setActiveSong({ song, data, index }));
+  const handlePlayClick = (song, i) => {
+    dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
   };
 
@@ -51,8 +51,8 @@ function SongDetails() {
         data={related}
         isPlaying={isPlaying}
         activeSong={activeSong}
-        handelPauseClick={handelPlayClick}
-        handelPlayClick={handelPauseClick}
+        handlePauseClick={handlePauseClick}
+        handlePlayClick={handlePlayClick}
       />
     </div>
   );

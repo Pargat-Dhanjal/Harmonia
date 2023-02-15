@@ -1,4 +1,4 @@
-import { FaPauseCircle, FaPlayCircle } from "react-icons/fa";
+import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';
 
 function PlayPause({ isPlaying, activeSong, song, handelPause, handelPlay }) {
   return (
