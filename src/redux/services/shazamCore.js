@@ -22,6 +22,12 @@ export const shazamCoreApi = createApi({
     getSongRelated: builder.query({
       query: ({ songid }) => `/songs/list-recommendations?key=${songid}`,
     }),
+    getArtistDetails: builder.query({
+      query: ({ id }) => `/artists/get-details?id=${id}`,
+    }),
+    getArtistSongs: builder.query({
+      query: ({ id }) => `/artists/get-top-songs?id=${id}`,
+    }),
   }),
 });
 
@@ -29,4 +35,6 @@ export const {
   useGetTracksQuery,
   useGetSongDetailsQuery,
   useGetSongRelatedQuery,
+  useGetArtistDetailsQuery,
+  useGetArtistSongsQuery,
 } = shazamCoreApi;
