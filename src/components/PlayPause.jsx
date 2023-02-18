@@ -6,12 +6,12 @@ function PlayPause({ isPlaying, activeSong, song, handelPause, handelPlay }) {
       {activeSong?.title === song.title && isPlaying ? (
         <FaPauseCircle
           onClick={handelPause}
-          className="text-4xl text-white cursor-pointer"
+          className="text-4xl text-red-600 cursor-pointer hover:text-red-400"
         />
       ) : (
         <FaPlayCircle
           onClick={handelPlay}
-          className="text-4xl text-white cursor-pointer"
+          className="text-4xl  text-red-600 cursor-pointer hover:text-red-400"
         />
       )}
     </div>

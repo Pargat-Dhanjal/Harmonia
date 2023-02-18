@@ -18,7 +18,7 @@ export const genres = [
 ];
 
 export const links = [
-  { name: 'Discover', to: '/discover', icon: HiOutlineHome },
+  { name: 'Home', to: '/home', icon: HiOutlineHome },
   { name: 'Around You', to: '/around-you', icon: HiOutlinePhotograph },
   { name: 'Top Artists', to: '/top-artists', icon: HiOutlineUserGroup },
   { name: 'Top Charts', to: '/top-charts', icon: HiOutlineHashtag },

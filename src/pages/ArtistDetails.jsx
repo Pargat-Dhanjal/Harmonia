@@ -10,7 +10,6 @@ function ArtistDetails() {
   return (
     <div className="relative w-full flex flex-col">
       <DetailsHeader artistId={id} artistData={data.data[0]} />
-      <h1 className="text-white text-2xl">Comming Soon</h1>
     </div>
   );
 }

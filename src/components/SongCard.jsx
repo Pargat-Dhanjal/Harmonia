@@ -15,8 +15,8 @@ function SongCard({ song, index, isPlaying, activeSong, data }) {
   };
 
   return (
-    <div className="w-[250px] p-4 bg-white/5 rounded-lg backdrop-blur-sm shadow-lg flex flex-col justify-between animate-slideup cursor-pointer">
-      <div className="w-full relative h-56 group">
+    <div className="w-60 p-4 bg-white/5 rounded-lg backdrop-blur-sm shadow-lg flex flex-col justify-between animate-slideup cursor-pointer">
+      <div className="w-full relative group">
         <div
           className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex 
         ${

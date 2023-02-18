@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
-import { Searchbar, Sidebar, MusicPlayer, TopPlay } from './components';
+import { Searchbar, Sidebar, MusicPlayer } from './components';
 import {
   ArtistDetails,
   TopArtists,
@@ -18,13 +18,13 @@ const App = () => {
   return (
     <div className="relative flex">
       <Sidebar />
-      <div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
+      <div className="flex-1 flex flex-col bg-[#121212]">
         <Searchbar />
 
-        <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse">
-          <div className="flex-1 h-fit pb-40">
+        <div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex xl:flex-row flex-col-reverse w-full">
+          <div className="flex-1 h-fit pb-60">
             <Routes>
-              <Route path="/discover" element={<Discover />} />
+              <Route path="/home" element={<Discover />} />
               <Route path="/top-artists" element={<TopArtists />} />
               <Route path="/top-charts" element={<TopCharts />} />
               <Route path="/around-you" element={<AroundYou />} />
@@ -34,14 +34,11 @@ const App = () => {
               <Route path="/" element={<Navigate to="/discover" />} />
             </Routes>
           </div>
-          <div className="xl:sticky relative top-0 h-fit">
-            <TopPlay />
-          </div>
         </div>
       </div>
 
       {activeSong?.title && (
-        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
+        <div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-[#181818] z-10 border-solid border-white/20 border">
           <MusicPlayer />
         </div>
       )}
