@@ -12,7 +12,7 @@ function AroundYou() {
   const { data, error, isLoading } = useGetCountryQuery(country);
 
   useEffect(() => {
-    setCountry('ip-country-chart-'.concat(ip?.country_code));
+    if (ip?.country_code) setCountry('ip-country-chart-'.concat(ip?.country_code));
     setLoading(false);
   }, [ip]);
 
